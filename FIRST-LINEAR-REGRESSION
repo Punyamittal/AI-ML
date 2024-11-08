@@ -1,0 +1,28 @@
+from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt 
+import numpy as np
+a=input("enter x list title")
+b=input("enter y list title")
+x=np.array(list(map(int, input().split())))
+y=np.array(list(map(int, input().split())))
+m_=y/x
+m=np.mean(m_)
+print(m)
+u=int(input(f"enter the value for {a} u wanna check on"))
+n=m*u
+x = np.append(x, u) 
+y = np.append(y, n) 
+print(f"the value required for {b} is{n}")
+#plotting
+plt.scatter(x,y, label="Data Points")
+plt.plot(x, m*x, label="fitted line", color="red")
+plt.xlabel(a)
+plt.ylabel(b)
+plt.title(f"{a} vs {b}")
+x1=int(input("enter x upper limit"))
+y1=int(input("enter y upper limit"))
+plt.xlim(0,x1)
+plt.ylim(0,y1)
+plt.legend()
+plt.grid(True)
+plt.show()
