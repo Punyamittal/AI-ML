@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 a=input("enter x list title")
 b=input("enter y list title")
-x=np.array(list(map(int, input().split())))
-y=np.array(list(map(int, input().split())))
+x=np.array(list(map(int, input("Enter the x list:").split())))
+y=np.array(list(map(int, input("Enter the y list:").split())))
 m_=y/x
 m=np.mean(m_)
 print(m)
