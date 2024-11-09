@@ -1,0 +1,19 @@
+import numpy as np
+x=np.array(list(map(int, input("Enter the input list:").split())))
+list1=np.array(list(map(int, input("Enter the output list:").split())))
+list2=np.array(list(map(int, input("Enter the correct output list:").split())))
+mean1 = np.mean(list1)
+mean2 = np.mean(list2)
+meandiff = abs(mean1 - mean2)
+print("Mean of list1:", mean1)
+print("Mean of list2:", mean2)
+print("Difference in means:", meandiff)
+mae = np.mean([abs(a - b) for a, b in zip(list1, list2)])
+print("Mean Absolute Error (MAE):", mae)
+mse = np.mean([(a - b)**2 for a, b in zip(list1, list2)])
+print("Mean Squared Error (MSE):", mse)
+if mean2 != 0:
+    pa = (1-(meandiff/abs(mean2)))*100
+    print("Percentage accuracy:", pa, "%")
+else:
+    print("Cannot calculate percentage accuracy because the mean of list2 is zero.")
