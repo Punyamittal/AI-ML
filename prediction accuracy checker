@@ -2,6 +2,20 @@ import numpy as np
 x=np.array(list(map(int, input("Enter the input list:").split())))
 list1=np.array(list(map(int, input("Enter the output list:").split())))
 list2=np.array(list(map(int, input("Enter the correct output list:").split())))
+import pandas as pd
+print()
+print("Given Data")
+print()
+data = {
+    "x": x,
+    "list1": list1,
+    "list2": list2
+}
+df = pd.DataFrame(data)
+print(df)
+print()
+print("calculated data")
+print()
 mean1 = np.mean(list1)
 mean2 = np.mean(list2)
 meandiff = abs(mean1 - mean2)
